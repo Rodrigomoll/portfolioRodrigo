@@ -19,7 +19,7 @@ export default function Divider() {
     }, [])
 
     return (
-        <div className="px-32">
+        <div className="px-8 sm:px-12 md:px-16 lg:px-32">
             <div ref={ref} className="divider-line" />
         </div>
     )

@@ -11,7 +11,7 @@ const snowflakes = Array.from({ length: 60 }, (_, i) => ({
 
 export default function Mountain() {
     return (
-        <div className="absolute right-0 top-0 h-full w-3/4 overflow-hidden bg-black">
+        <div className="absolute inset-x-0 bottom-0 h-2/5 md:inset-x-auto md:right-0 md:top-0 md:bottom-auto md:h-full md:w-3/4 overflow-hidden bg-black">
             <Image
                 src={mountainImg}
                 alt="Andes Mountain"

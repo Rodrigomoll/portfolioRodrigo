@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-    background-color: #000000;
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+    @apply bg-zinc-50 dark:bg-black;
 }
 
 @keyframes fadeZoomIn {
@@ -64,8 +65,12 @@ body {
 
 .divider-line {
     height: 1px;
-    background-color: #3f3f46;
+    background-color: #e4e4e7;
     width: 0%;
+}
+
+.dark .divider-line {
+    background-color: #3f3f46;
 }
 
 .divider-line.visible {

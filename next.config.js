@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    basePath: '/cs-220-portfolio-v3-Rodrigomoll',
+    basePath: '/portfolioRodrigo',
+    assetPrefix: '/portfolioRodrigo',
     images: {
         unoptimized: true,
     },
