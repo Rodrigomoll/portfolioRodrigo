@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import ensignLogo from '@/assets/ensign-college.webp'
 import ravnLogo from '@/assets/ravn.png'
 import tecsupLogo from '@/assets/tecsup.png'
 import bsgLogo from '@/assets/bsg.png'
@@ -9,7 +10,23 @@ import bsgLogo from '@/assets/bsg.png'
 const experiences = [
     {
         id: 1,
-        period: '2024 — 2025',
+        period: '2025 to Present',
+        role: 'Power Platform Developer',
+        company: 'Ensign College',
+        client: '',
+        location: 'Salt Lake City, Utah',
+        logo: ensignLogo,
+        overview: [
+            'Develop internal business applications with Microsoft Power Apps that digitize and streamline college workflows.',
+            'Build automated processes with Power Automate to reduce repetitive work and improve consistency across teams.',
+            'Design and maintain SharePoint data structures, permissions, and integrations that support secure solutions that are easy to use.',
+            'Collaborate with staff to translate operational needs into scalable technical solutions.',
+        ],
+        tech: ['Power Apps', 'Power Automate', 'SharePoint', 'Microsoft 365', 'Data Modeling', 'Workflow Automation'],
+    },
+    {
+        id: 2,
+        period: '2024 to 2025',
         role: 'QA Engineer',
         company: 'RAVN',
         client: 'Client: HowWeFeel (Pinterest)',
@@ -17,13 +34,13 @@ const experiences = [
         logo: ravnLogo,
         overview: [
             'Architected mobile automation framework using WebDriverIO, Appium & TypeScript for iOS and Android.',
-            'Reduced manual regression testing from 25 to 15 hours — 40% faster release cycles.',
+            'Reduced manual regression testing from 25 to 15 hours, making release cycles 40% faster.',
             'Led technical training for 4 QA engineers, improving team velocity by 35%.',
         ],
         tech: ['TypeScript', 'Appium', 'WebDriverIO', 'iOS', 'Android', 'CI/CD'],
     },
     {
-        id: 2,
+        id: 3,
         period: '2023',
         role: 'Software Developer',
         company: 'Tecsup',
@@ -38,7 +55,7 @@ const experiences = [
         tech: ['.NET Core', 'SQL Server', 'REST APIs', 'GitHub', 'C#'],
     },
     {
-        id: 3,
+        id: 4,
         period: '2023',
         role: 'Software Developer Intern',
         company: 'BSG Institute',
@@ -48,7 +65,7 @@ const experiences = [
         overview: [
             'Built a virtual exam simulator platform for 200+ concurrent users.',
             'Reduced page load times by 35% using Angular frontend and .NET backend.',
-            'Simplified database queries to handle high-traffic exam sessions seamlessly.',
+            'Simplified database queries to support busy exam sessions reliably.',
         ],
         tech: ['Angular', '.NET', 'Entity Framework', 'SQL'],
     },
@@ -76,11 +93,10 @@ export default function About() {
                     The climb<br />never stops.
                 </h2>
                 <p className="text-zinc-500 dark:text-zinc-400 text-base leading-relaxed mb-4 max-w-md">
-                    Originally from Peru where the Andes shaped my perspective — I moved to Utah to pursue my Software Engineering degree at Ensign College.
+                    My background combines software development and quality assurance. I have built web applications, backend services, and mobile test automation, which taught me to think about both how software is created and how its quality is protected.
                 </p>
                 <p className="text-zinc-500 dark:text-zinc-400 text-base leading-relaxed mb-16 max-w-md">
-                    My journey started in QA automation, building mobile testing frameworks for Pinterest and reducing regression cycles by 40%. Today I&apos;m focused on fullstack
-                    development and AI engineering — building tools that actually matter.
+                    I enjoy building useful products and exploring technologies I have not worked with before. When I learn something new, I like to understand how it works, experiment with it, and turn that knowledge into a real solution people can use.
                 </p>
                 <div className="flex gap-10 sm:gap-16">
                     <div>
@@ -129,7 +145,7 @@ export default function About() {
                         className="animate-fadeZoom bg-white dark:bg-white/5 dark:backdrop-blur-xl border border-zinc-200 dark:border-white/10 shadow-2xl dark:shadow-none p-8 md:p-10 max-w-lg w-full mx-6 overflow-y-auto max-h-[90vh]"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Close button — always visible at top */}
+                        {/* Close button is always visible at the top */}
                         <div className="flex justify-end mb-4">
                             <button
                                 onClick={() => setSelected(null)}
@@ -142,14 +158,22 @@ export default function About() {
 
                         {/* Logo */}
                         <div className="flex justify-center mb-8">
-                            <Image
-                                src={selected.logo}
-                                alt={selected.company}
-                                width={140}
-                                height={50}
-                                className="object-contain dark:brightness-200 dark:grayscale"
-                                style={{ filter: undefined }}
-                            />
+                            {selected.logo ? (
+                                <Image
+                                    src={selected.logo}
+                                    alt={selected.company}
+                                    width={180}
+                                    height={80}
+                                    className="h-16 w-auto object-contain dark:brightness-200 dark:grayscale"
+                                />
+                            ) : (
+                                <div
+                                    className="flex h-16 w-16 items-center justify-center border border-zinc-300 dark:border-zinc-600 text-zinc-900 dark:text-white text-lg font-bold tracking-[0.2em]"
+                                    aria-label={selected.company}
+                                >
+                                    EC
+                                </div>
+                            )}
                         </div>
 
                         <div className="border-t border-zinc-200 dark:border-zinc-700 mb-8" />
@@ -165,7 +189,7 @@ export default function About() {
                         <ul className="space-y-3 mb-8">
                             {selected.overview.map((item, i) => (
                                 <li key={i} className="flex gap-3 text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
-                                    <span className="text-zinc-900 dark:text-white mt-1">—</span>
+                                    <span className="text-zinc-900 dark:text-white mt-1" aria-hidden="true">•</span>
                                     {item}
                                 </li>
                             ))}

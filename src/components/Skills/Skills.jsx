@@ -7,7 +7,7 @@ import {
     SiNodedotjs, SiMysql,
     SiAppium, SiGit, SiGithub,
 } from 'react-icons/si'
-import { FaBrain, FaRobot, FaServer, FaVial } from 'react-icons/fa'
+import { FaBrain, FaRobot, FaServer, FaVial, FaMicrosoft, FaBolt, FaShareAlt } from 'react-icons/fa'
 
 const skillGroups = [
     {
@@ -34,6 +34,14 @@ const skillGroups = [
             { icon: SiNodedotjs, name: 'Node.js', color: '#339933' },
             { icon: SiMysql, name: 'MySQL', color: '#4479A1' },
             { icon: FaServer, name: 'REST APIs', color: '#6366f1' },
+        ],
+    },
+    {
+        category: 'Microsoft Power Platform',
+        skills: [
+            { icon: FaMicrosoft, name: 'Power Apps', color: '#742774' },
+            { icon: FaBolt, name: 'Power Automate', color: '#0066FF' },
+            { icon: FaShareAlt, name: 'SharePoint', color: '#038387' },
         ],
     },
     {
@@ -91,7 +99,7 @@ export default function Skills() {
     return (
         <section id="skills" className="relative z-10 min-h-screen flex flex-col md:flex-row items-start md:items-center px-8 sm:px-12 md:px-16 lg:px-32 py-16 md:py-32 gap-12 md:gap-24">
 
-            {/* Left — Skill Groups */}
+            {/* Skill groups */}
             <div className="w-full md:w-1/2">
                 <p className="text-zinc-500 text-xs tracking-[0.3em] uppercase mb-4">
                     What I work with
@@ -121,7 +129,7 @@ export default function Skills() {
                 </div>
             </div>
 
-            {/* Right — CTA */}
+            {/* Call to action */}
             <div className="w-full md:w-1/2 flex flex-col justify-center md:sticky md:top-32 self-start pl-0 md:pl-16 lg:pl-32">
                 <p className="text-zinc-400 dark:text-zinc-600 text-xs tracking-[0.3em] uppercase mb-8">
                     Let&apos;s work together
