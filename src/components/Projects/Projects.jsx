@@ -9,7 +9,7 @@ const projects = [
         name: 'Career Coat of Arms',
         tagline: 'AI agent that turns career identity into a heraldic shield',
         category: 'AI · Fullstack',
-        status: 'Live — used at Ensign College workshops',
+        status: 'Live and used at Ensign College workshops',
         overview: [
             'Built a conversational AI agent that guides students through 7 career identity questions one at a time.',
             'Integrated Google Gemini API to generate a custom heraldic shield image on the trigger word "DRAW".',
@@ -21,11 +21,11 @@ const projects = [
         id: 2,
         year: '2025',
         name: 'JobLens AI',
-        tagline: 'AI-powered job application tracker',
+        tagline: 'Job application tracker with AI assisted insights',
         category: 'AI · Fullstack',
         status: 'In development',
         overview: [
-            'Built a full-stack app to track job applications and their status in one place.',
+            'Built an application with frontend and backend services to track job applications in one place.',
             'Integrated Claude API to analyze job descriptions and give actionable insights.',
             'Designed with a React + Vite frontend and a Node.js + Express + SQLite backend.',
         ],
@@ -55,10 +55,10 @@ export default function Projects() {
                     Things I&apos;ve<br />actually built.
                 </h2>
                 <p className="text-zinc-500 dark:text-zinc-400 text-base leading-relaxed mb-4 max-w-md">
-                    Not tutorials. Not to-do apps. Real projects used by real people — built to solve specific problems and shipped end-to-end.
+                    These are real projects built for real people. Each one started with a specific problem and became a working product.
                 </p>
                 <p className="text-zinc-500 dark:text-zinc-400 text-base leading-relaxed max-w-md">
-                    Each one is a step toward the kind of engineer I&apos;m becoming — one who can design, build, and ship.
+                    They reflect the kind of engineer I want to become: someone who can understand a need, design a solution, and bring it to life.
                 </p>
             </div>
 
@@ -93,7 +93,7 @@ export default function Projects() {
                         className="animate-fadeZoom bg-white dark:bg-white/5 dark:backdrop-blur-xl border border-zinc-200 dark:border-white/10 shadow-2xl dark:shadow-none p-8 md:p-10 max-w-lg w-full mx-6 overflow-y-auto max-h-[90vh]"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Close button — always visible at top */}
+                        {/* Close button is always visible at the top */}
                         <div className="flex justify-end mb-4">
                             <button
                                 onClick={() => setSelected(null)}
@@ -115,7 +115,7 @@ export default function Projects() {
                         <ul className="space-y-3 mb-8">
                             {selected.overview.map((item, i) => (
                                 <li key={i} className="flex gap-3 text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
-                                    <span className="text-zinc-900 dark:text-white mt-1">—</span>
+                                    <span className="text-zinc-900 dark:text-white mt-1" aria-hidden="true">•</span>
                                     {item}
                                 </li>
                             ))}

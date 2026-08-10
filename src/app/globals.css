@@ -19,36 +19,6 @@ body {
     }
 }
 
-@keyframes snowfall {
-    0% {
-        transform: translateY(-10px) translateX(0px);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 0.6;
-    }
-
-    100% {
-        transform: translateY(100vh) translateX(20px);
-        opacity: 0;
-    }
-}
-
-.snowflake {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    animation: snowfall linear infinite;
-    opacity: 0;
-}
-
 .animate-fadeZoom {
     animation: fadeZoomIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
